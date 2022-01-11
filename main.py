@@ -27,7 +27,13 @@ escolha = st.number_input("Valor",1,6)
 botao = st.button("Buscar dados")
 
 if botao:
-    ml_final()
+    if escolha == 1:
+        st.write("Escolheu AMAZON")
+    elif escolha == 2:
+        st.write("Escolheu MERCADO LIVRE")
+        ml_final()
+    else:
+        st.write("Algo deu errado")
 
 
 

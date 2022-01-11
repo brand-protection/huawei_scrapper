@@ -130,9 +130,6 @@ def ml_search_attributes(url):
     response = urlopen(url)
     html = response.read()
 
-    #TESTE PRINTANDO URL 
-    print(url)
-
     #Criando o soup
     bs = BeautifulSoup(html, 'html.parser')
 
