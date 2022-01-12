@@ -11,17 +11,9 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.common.exceptions import WebDriverException
 from stqdm import stqdm
 from urllib.request import urlopen
-from tqdm import tqdm
+from stqdm import stqdm
 import streamlit as st
 import base64
-
-#Pegando função de download
-def download_file(dataset):
-    csv = dataset.to_csv(index=False)
-    b64 = base64.b64encode(csv.encode()).decode()
-    href = f'<a href="data:file/csv;base64,{b64}" download="{dataset}.csv">Download csv file</a>'
-
-    return st.markdown(href, unsafe_allow_html=True)
 
 #Congiruando o driver 
 options = Options()
@@ -233,14 +225,14 @@ def search_more_offers(url):
 def amazon_final(): 
 
     #Fazendo a primeira função 
-    for url in tqdm(urls_dos_produtos):
+    for url in stqdm(urls_dos_produtos):
         search_links(url)
 
     #Buscando atributos por urls encontradas 
-    for url in tqdm(Urls_amazon):
+    for url in stqdm(Urls_amazon):
         search_attributes(url)
 
-    for url in tqdm(more_offers_list):
+    for url in stqdm(more_offers_list):
         search_more_offers(url)
 
     #Fazendo o tratamento dos dados 
@@ -282,7 +274,7 @@ def amazon_final():
 
 
     #Exportando o arquivo
-    download_file(Dataset_amazon)
+    return Dataset_amazon
 
 
 
