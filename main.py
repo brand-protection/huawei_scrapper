@@ -31,7 +31,7 @@ if botao:
         st.write("Escolheu AMAZON")
     elif escolha == 2:
         st.write("Escolheu MERCADO LIVRE")
-        ml_final()
+        download_file(ml_final())
     else:
         st.write("Algo deu errado")
 

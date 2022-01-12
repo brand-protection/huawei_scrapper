@@ -172,7 +172,6 @@ def ml_search_attributes(url):
 
 #Função final 
 def ml_final():
-
     #Criando dataset 
     for url in stqdm(Urls_products):
         ml_search_links(url)
@@ -216,8 +215,7 @@ def ml_final():
     #Pegando apenas as informações que tem o preço maior que 200
     dataset = dataset[dataset['Preço'] > 200]  
 
-    #Exportando o dataset 
-    download_file(dataset)
+    return dataset
 
 
 
