@@ -22,7 +22,7 @@ options.add_argument('--log-level=3')
 options.add_argument('--disable-gpu')
 
 #Configurando o driver 
-driver = webdriver.Chrome(executable_path="Selenium/chromedriver_97.exe",options=options)
+driver = webdriver.Chrome(executable_path="Seleniu\chromedriver_97.exe",options=options)
 driver.delete_all_cookies()
 
 
