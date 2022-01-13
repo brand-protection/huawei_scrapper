@@ -34,6 +34,7 @@ if botao:
     elif escolha == 2:
         st.write("Escolheu MERCADO LIVRE")
         download_file(ml_final())
+        st.button("Finalizar a ferramenta")
     elif escolha == 3:
         st.write("Escolheu Via Varejo")
     elif escolha == 4:
